@@ -4,6 +4,10 @@ import DayList from "./DayList";
 
 import "components/Application.scss";
 
+import React, { useState } from "react";
+
+const [day, setDay] = useState("Monday"); 
+
 const days = [
   {
     id: 1,
@@ -38,6 +42,7 @@ export default function Application(props) {
             days={days}
             day={"Monday"}
             setDay={(day) => console.log(day)}
+            days={days} day={day} setDay={setDay} 
           />{" "}
         </nav>
         <img
