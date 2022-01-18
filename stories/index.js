@@ -21,4 +21,8 @@ storiesOf("Button", module)
     <Button disabled onClick={action("button-clicked")}>
       Disabled
     </Button>
-  ));
+  ))
+
+  .add("Clickable", () => (
+    <Button onClick={action("button-clicked")}>Clickable</Button>))
+  .add("Disabled", () => (<Button disabled onClick={action("button-clicked")}>Disabled</Button>))
