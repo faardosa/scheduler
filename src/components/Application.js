@@ -24,7 +24,7 @@ const days = [
 ];
 
 export default function Application(props) {
-  const [day, setDay] = useState("Monday"); 
+  const [value, onChange] = useState("Monday"); 
   return (
     <main className="layout">
       <section className="sidebar">
@@ -38,9 +38,9 @@ export default function Application(props) {
           {" "}
           <DayList
             days={days}
-            day={"Monday"}
-            setDay={(day) => console.log(day)}
-            days={days} day={day} setDay={setDay} 
+            value={"Monday"}
+            onChange={(value) => console.log(value)}
+            days={days} value={value} onChange={onChange} 
           />{" "}
         </nav>
         <img

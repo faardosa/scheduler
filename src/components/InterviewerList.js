@@ -10,14 +10,14 @@ InterviewerList.propTypes = {
 }
 
 export default function InterviewerList(props) {
-  const interviewers = props.interviewers.map((interviewer) => {
+  const interviewers = props.interviewers.map((value) => {
     return (
       <InterviewerListItem
-        key={interviewer.id}
-        name={interviewer.name}
-        avatar={interviewer.avatar}
-        selected={interviewer.id === props.interviewer}
-        setInterviewer={() => props.setInterviewer(interviewer.id)}
+        key={value.id}
+        name={value.name}
+        avatar={value.avatar}
+        selected={value.id === props.value}
+        onChange={() => props.onChange(value.id)}
       />
     );
   });
