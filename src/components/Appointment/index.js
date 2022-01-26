@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Fragment } from 'react'
 import useVisualMode from "hooks/useVisualMode";
 //Imported styles 
 import './styles.scss'
@@ -8,12 +8,14 @@ import Show from "./Show";
 import Empty from "./Empty";
 
 //Apointments imports
-// import Form from "components/Appointment/Form";
+import Form from "components/Appointment/Form";
 import Status from "components/Appointment/Status";
 import Confirm from "components/Appointment/Confirm";
-// import Error from "components/Appointment/Error"
+//import Error from "components/Appointment/Error"
 
 export default function Appointment(props) {
+  console.log("appointment props is", props)
+
   const EMPTY = "EMPTY";
   const SHOW = "SHOW";
   const CREATE = "CREATE"
@@ -66,9 +68,9 @@ export default function Appointment(props) {
         onEdit={edit}
       />
     )}
-    {/* {mode === CREATE && <Form interviewers={props.interviewers} onSave={save} onCancel={() => back()} />}
+    {mode === CREATE && <Form interviewers={props.interviewers} onSave={save} onCancel={() => back()} />}
 
-    {mode === EDIT && <Form onSave={save} onCancel={() => back()} interviewer={props.interview.interviewer.id} interviewers={props.interviewers} name={props.interview.student} />} */}
+    {mode === EDIT && <Form onSave={save} onCancel={() => back()} interviewer={props.interview.interviewer.id} interviewers={props.interviewers} name={props.interview.student} />}
 
     {mode === CONFIRM && <Confirm onCancel={() => back()} onConfirm={destroy} message='Are you sure you want to delete this?' />}
 
