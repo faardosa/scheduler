@@ -1,28 +1,42 @@
-import { useState } from 'react';
+import { useState } from "react";
+
 export default function useVisualMode(initial) {
   const [mode, setMode] = useState(initial);
+
   const [history, setHistory] = useState([initial]);
-  function transition(newMode, replace) {
-    setMode(newMode)
-    setHistory(prev => {
-      if (replace) {
-        let newArray = [...prev]
-        newArray.pop()
-        newArray.push(newMode)
-        return newArray
-      } else {
-        return [...prev, newMode]
-      }
-    })
-  }
+
+  const transition = (newMode, replace = false) => {
+    if (replace) {
+      setMode((prev) => newMode);
+
+      let replaceHistory = [...history];
+
+      replaceHistory[replaceHistory.length - 1] = mode;
+
+      setHistory((prev) => replaceHistory);
+    } else {
+      setMode((prev) => newMode);
+
+      let newHistory = [...history];
+
+      newHistory.push(newMode);
+
+      setHistory((prev) => newHistory);
+    }
+  };
 
   const back = () => {
-    let previous = [...history]
-    previous.pop()
-    setHistory(previous)
-    if (previous.length > 0) {
-      setMode(previous[previous.length - 1])
+    console.log("back clicked");
+    let newHistory = [...history];
+
+    newHistory.pop(mode);
+
+    setHistory((prev) => newHistory);
+
+    if (history.length > 1) {
+      setMode((prev) => newHistory[newHistory.length - 1]);
     }
-  }
-  return { mode, transition, back };
+  };
+
+  return { mode, history, transition, back };
 }
