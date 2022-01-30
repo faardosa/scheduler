@@ -21,3 +21,6 @@ npm test
 ```sh
 npm run storybook
 ```
+## Screenshots 
+
+!["Delete Confirmation"](https://github.com/faardosa/scheduler/blob/master/docs/delete-confirmation.png?raw=true)
