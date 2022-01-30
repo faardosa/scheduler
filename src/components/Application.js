@@ -2,7 +2,7 @@ import DayList from "./DayList";
 
 import "components/Application.scss";
 
-import React, { useState, useEffect } from "react";
+import React from "react";
 
 import Appointment from "./Appointment";
 
