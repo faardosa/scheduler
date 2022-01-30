@@ -24,3 +24,5 @@ npm run storybook
 ## Screenshots 
 
 !["Delete Confirmation"](https://github.com/faardosa/scheduler/blob/master/docs/delete-confirmation.png?raw=true)
+
+!["Student name cannot be blank"](https://github.com/faardosa/scheduler/blob/master/docs/student-name-cannot-be-blank.png?raw=true)
