@@ -19,8 +19,13 @@ export default function Form(props) {
 
   //function that checks if name input field is blank when clicking "Save"
   function validate() {
-    if (name === "") {
+    if (!name.trim()) {
       setError("Student name cannot be blank");
+      return;
+    } 
+    console.log("name", interviewer, name)
+    if (!interviewer) {
+      setError("Interview cannot be blank");
       return;
     }
     setError("");

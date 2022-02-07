@@ -62,8 +62,10 @@ describe("Form", () => {
 
     expect(queryByText(/student name cannot be blank/i)).toBeNull();
 
-    expect(onSave).toHaveBeenCalledTimes(1);
-    expect(onSave).toHaveBeenCalledWith("Lydia Miller-Jones", null);
+    expect(getByText(/Interview cannot be blank/i)).toBeInTheDocument();
+
+  
+    expect(onSave).not.toHaveBeenCalled();
   });
   
   it("calls onCancel and resets the input field", () => {
